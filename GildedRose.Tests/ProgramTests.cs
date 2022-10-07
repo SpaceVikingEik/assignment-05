@@ -74,6 +74,20 @@ public class ProgramTests
 
         Assert.Equal(11, Program.Items[0].Quality);
     }
+    [Fact]
+    public void TestThatBrieRisesInQualityWhenSelinPassed()
+    {
+        Program Program = new Program();
+        Program.Items = new List<Item>();
+        var Item = new Item { Name = "Aged Brie", SellIn = 0, Quality = 10 };
+        Program.Items.Add(Item);
+
+
+        Program.UpdateQuality();
+
+
+        Assert.Equal(12, Program.Items[0].Quality);
+    }
 
     [Fact]
     public void TestThatTicketsRisesInQuality()
@@ -90,7 +104,7 @@ public class ProgramTests
         Assert.Equal(11, Program.Items[0].Quality);
     }
 
-        [Fact]
+    [Fact]
     public void TestThatTicketsRisesInQualityOver50()
     {
         Program Program = new Program();
@@ -121,7 +135,7 @@ public class ProgramTests
 
     }
 
-    
+
     [Fact]
 
     public void TestThatTicketsRisesInQualityFastest()
@@ -168,7 +182,7 @@ public class ProgramTests
         Assert.Equal(10, Program.Items[0].Quality);
     }
 
-        [Fact]
+    [Fact]
     public void TestSulfarasNeverApproachesSellinDate()
     {
         Program Program = new Program();
@@ -182,7 +196,7 @@ public class ProgramTests
 
         Assert.Equal(1, Program.Items[0].SellIn);
     }
-    
 
-    
+
+
 }

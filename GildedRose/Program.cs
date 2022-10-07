@@ -7,10 +7,10 @@ namespace GildedRose
     {
         public IList<Item> Items;
         public static void Main(string[] args)
-        {
+        {/*
             //System.Console.WriteLine("OMGHAI!");
 
-            /*var app = new Program()
+            var app = new Program()
                           {
                               Items = new List<Item>
                                           {
@@ -54,8 +54,8 @@ namespace GildedRose
                 Console.WriteLine("");
                 app.UpdateQuality();
             }
-            */
-
+            
+*/
         }
 
         public void UpdateQuality()
