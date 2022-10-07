@@ -13,7 +13,7 @@ public class ProgramTests
 
         app.UpdateQuality();
         var item = app.Items.FirstOrDefault();
-        item.Quality.Should().Be(1);
+        item!.Quality.Should().Be(1);
         item.SellIn.Should().Be(1);
     }
 
@@ -27,7 +27,7 @@ public class ProgramTests
 
         app.UpdateQuality();
         var item = app.Items.FirstOrDefault();
-        item.Quality.Should().Be(2);
+        item!.Quality.Should().Be(2);
         item.SellIn.Should().Be(-1);
     }
 
@@ -41,7 +41,7 @@ public class ProgramTests
 
         app.UpdateQuality();
         var item = app.Items.FirstOrDefault();
-        item.Quality.Should().Be(50);
+        item!.Quality.Should().Be(50);
         item.SellIn.Should().Be(1);
     }
 
@@ -56,7 +56,7 @@ public class ProgramTests
         app.UpdateQuality();
         app.UpdateQuality();
         var item = app.Items.FirstOrDefault();
-        item.Quality.Should().Be(16);
+        item!.Quality.Should().Be(16);
         item.SellIn.Should().Be(-2);
     }
 
@@ -72,7 +72,7 @@ public class ProgramTests
         app.UpdateQuality();
         app.UpdateQuality();
         var item = app.Items.FirstOrDefault();
-        item.Quality.Should().Be(0);
+        item!.Quality.Should().Be(0);
         item.SellIn.Should().Be(-3);
     }
 
@@ -89,7 +89,7 @@ public class ProgramTests
         app.UpdateQuality();
         app.UpdateQuality();
         var item = app.Items.FirstOrDefault();
-        item.Quality.Should().Be(80);
+        item!.Quality.Should().Be(80);
         item.SellIn.Should().Be(0);
     }
 
@@ -109,7 +109,7 @@ public class ProgramTests
         app.UpdateQuality();
         app.UpdateQuality();
         var item = app.Items.FirstOrDefault();
-        item.Quality.Should().Be(26);
+        item!.Quality.Should().Be(26);
         item.SellIn.Should().Be(3);
     }
 
@@ -129,13 +129,7 @@ public class ProgramTests
         app.UpdateQuality();
         app.UpdateQuality();
         var item = app.Items.FirstOrDefault();
-        item.Quality.Should().Be(0);
+        item!.Quality.Should().Be(0);
         item.SellIn.Should().Be(-1);
-    }
-
-    [Fact]
-    public void TestItem()
-    {
-        
     }
 }  
