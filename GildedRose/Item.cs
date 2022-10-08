@@ -8,7 +8,5 @@
 
         public int Quality { get; set; }
 
-        public virtual void UpdateQuality(){
-
-        }
+        public virtual void UpdateQuality(){}
     }
