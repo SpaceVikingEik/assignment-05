@@ -81,7 +81,7 @@ public class ProgramTests
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Ticket { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 20, Quality = 10 };
+        var Item = new TicketItem { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 20, Quality = 10 };
         Program.Items.Add(Item);
 
 
@@ -96,7 +96,7 @@ public class ProgramTests
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Ticket { Name = "Aged Brie", SellIn = 5, Quality = 50 };
+        var Item = new TicketItem { Name = "Aged Brie", SellIn = 5, Quality = 50 };
         Program.Items.Add(Item);
 
 
@@ -111,7 +111,7 @@ public class ProgramTests
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Ticket { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 10, Quality = 10 };
+        var Item = new TicketItem { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 10, Quality = 10 };
         Program.Items.Add(Item);
 
 
@@ -129,7 +129,7 @@ public class ProgramTests
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Ticket { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 10 };
+        var Item = new TicketItem { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 5, Quality = 10 };
         Program.Items.Add(Item);
 
 
@@ -144,7 +144,7 @@ public class ProgramTests
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Ticket { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 0, Quality = 10 };
+        var Item = new TicketItem { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 0, Quality = 10 };
         Program.Items.Add(Item);
 
 

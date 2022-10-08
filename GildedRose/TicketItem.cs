@@ -1,4 +1,4 @@
-    public class Ticket : Item
+    public class TicketItem : Item
     {
         public override void UpdateQuality()
         {
