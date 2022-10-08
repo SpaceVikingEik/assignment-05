@@ -14,11 +14,11 @@ namespace GildedRose
             {
                 Items = new List<Item>
                 {
-                new Normal { Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20 },
-                new Cheese { Name = "Aged Brie", SellIn = 2, Quality = 0 },
-                new Normal { Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7 },
-                new Legendary { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80 },
-                new Legendary { Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 80 },
+                new NormalItem { Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20 },
+                new CheeseItem { Name = "Aged Brie", SellIn = 2, Quality = 0 },
+                new NormalItem { Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7 },
+                new LegendaryItem { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80 },
+                new LegendaryItem { Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 80 },
                 new Ticket
                 {
                     Name = "Backstage passes to a TAFKAL80ETC concert",
@@ -37,7 +37,7 @@ namespace GildedRose
                     SellIn = 5,
                     Quality = 49
                 },
-                new Conjured { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 }
+                new ConjuredItem { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 }
                 }
 
             };

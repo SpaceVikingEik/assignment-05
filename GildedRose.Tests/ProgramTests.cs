@@ -4,11 +4,11 @@ namespace GildedRose.Tests;
 public class ProgramTests
 {
     [Fact]
-    public void NormalItemDegration()
+    public void NormalItemItemDegration()
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Normal { Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20 };
+        var Item = new NormalItem { Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20 };
         Program.Items.Add(Item);
 
 
@@ -19,11 +19,11 @@ public class ProgramTests
     }
 
     [Fact]
-    public void NormalItemDegrationAfterSelinDateHasPassed()
+    public void NormalItemItemDegrationAfterSelinDateHasPassed()
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Normal { Name = "+5 Dexterity Vest", SellIn = 0, Quality = 20 };
+        var Item = new NormalItem { Name = "+5 Dexterity Vest", SellIn = 0, Quality = 20 };
         Program.Items.Add(Item);
 
 
@@ -38,7 +38,7 @@ public class ProgramTests
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Normal { Name = "+5 Dexterity Vest", SellIn = 0, Quality = 1 };
+        var Item = new NormalItem { Name = "+5 Dexterity Vest", SellIn = 0, Quality = 1 };
         Program.Items.Add(Item);
 
 
@@ -52,7 +52,7 @@ public class ProgramTests
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Cheese { Name = "Aged Brie", SellIn = 5, Quality = 10 };
+        var Item = new CheeseItem { Name = "Aged Brie", SellIn = 5, Quality = 10 };
         Program.Items.Add(Item);
 
 
@@ -66,7 +66,7 @@ public class ProgramTests
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Cheese { Name = "Aged Brie", SellIn = 0, Quality = 10 };
+        var Item = new CheeseItem { Name = "Aged Brie", SellIn = 0, Quality = 10 };
         Program.Items.Add(Item);
 
 
@@ -159,7 +159,7 @@ public class ProgramTests
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Legendary { Name = "Sulfuras, Hand of Ragnaros", SellIn = 5, Quality = 80 };
+        var Item = new LegendaryItem { Name = "Sulfuras, Hand of Ragnaros", SellIn = 5, Quality = 80 };
         Program.Items.Add(Item);
 
 
@@ -174,7 +174,7 @@ public class ProgramTests
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Legendary { Name = "Sulfuras, Hand of Ragnaros", SellIn = 1, Quality = 80 };
+        var Item = new LegendaryItem { Name = "Sulfuras, Hand of Ragnaros", SellIn = 1, Quality = 80 };
         Program.Items.Add(Item);
 
 
@@ -189,7 +189,7 @@ public class ProgramTests
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Conjured { Name = "Conjured Mana Cake", SellIn = 2, Quality = 10 };
+        var Item = new ConjuredItem { Name = "Conjured Mana Cake", SellIn = 2, Quality = 10 };
         Program.Items.Add(Item);
 
 
@@ -204,7 +204,7 @@ public class ProgramTests
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new Conjured { Name = "Conjured Mana Cake", SellIn = 0, Quality = 10 };
+        var Item = new ConjuredItem { Name = "Conjured Mana Cake", SellIn = 0, Quality = 10 };
         Program.Items.Add(Item);
 
 

@@ -1,5 +1,5 @@
 
-    public class Legendary : Item
+    public class LegendaryItem : Item
     {
         public override void UpdateQuality()
         {

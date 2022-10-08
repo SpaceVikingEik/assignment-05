@@ -1,4 +1,4 @@
-    public class Cheese : Item
+    public class CheeseItem : Item
     {
         public override void UpdateQuality()
         {

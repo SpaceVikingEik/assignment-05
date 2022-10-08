@@ -1,4 +1,4 @@
-public class Conjured : Item
+public class ConjuredItem : Item
 {
     public override void UpdateQuality()
     {
