@@ -9,6 +9,6 @@
         public int Quality { get; set; }
 
         public virtual void UpdateQuality(){
-            
+
         }
     }
