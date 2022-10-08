@@ -1,4 +1,4 @@
-    //I hope the goblin can stomach this much change, i have but simply moved the updateQuality Method to this class and made it virtual,
+    //I hope the goblin can stomach this much change, i have simply moved the updateQuality Method to this class and made it virtual,
     //so polymorphism will work.
     public class Item
     {
