@@ -155,11 +155,11 @@ public class ProgramTests
     }
 
     [Fact]
-    public void SulfarasNeverFallsInQuality()
+    public void SulfarasIsAlways80Quality()
     {
         Program Program = new Program();
         Program.Items = new List<Item>();
-        var Item = new LegendaryItem { Name = "Sulfuras, Hand of Ragnaros", SellIn = 5, Quality = 80 };
+        var Item = new LegendaryItem { Name = "Sulfuras, Hand of Ragnaros", SellIn = 5, Quality = 75 };
         Program.Items.Add(Item);
 
 
