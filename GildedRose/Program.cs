@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace GildedRose
 {
-    class Program
+    public class Program
     {
-        IList<Item> Items;
-        static void Main(string[] args)
+       public IList<Item> Items;
+       static void Main(string[] args)
         {
-            System.Console.WriteLine("OMGHAI!");
 
-            var app = new Program()
+           var app = new Program()
                           {
                               Items = new List<Item>
                                           {
@@ -19,129 +18,76 @@ namespace GildedRose
                 new Item { Name = "Elixir of the Mongoose", SellIn = 5, Quality = 7 },
                 new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 0, Quality = 80 },
                 new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = -1, Quality = 80 },
-                new Item
-                {
-                    Name = "Backstage passes to a TAFKAL80ETC concert",
-                    SellIn = 15,
-                    Quality = 20
-                },
-                new Item
-                {
-                    Name = "Backstage passes to a TAFKAL80ETC concert",
-                    SellIn = 10,
-                    Quality = 49
-                },
-                new Item
-                {
-                    Name = "Backstage passes to a TAFKAL80ETC concert",
-                    SellIn = 5,
-                    Quality = 49
-                },
-				// this conjured item does not work properly yet
+                new Item{Name = "Backstage passes to a TAFKAL80ETC concert",SellIn = 15,Quality = 20},
+                new Item{Name = "Backstage passes to a TAFKAL80ETC concert",SellIn = 10,Quality = 49},
+                new Item{Name = "Backstage passes to a TAFKAL80ETC concert",SellIn = 5,Quality = 49},
 				new Item { Name = "Conjured Mana Cake", SellIn = 3, Quality = 6 }
                                           }
 
                           };
 
-            for (var i = 0; i < 31; i++)
+           for (var i = 0; i < 31; i++)
             {
                 Console.WriteLine("-------- day " + i + " --------");
                 Console.WriteLine("name, sellIn, quality");
-                for (var j = 0; j < app.Items.Count; j++)
+                foreach(Item items in app.Items)
                 {
-                    Console.WriteLine(app.Items[j].Name + ", " + app.Items[j].SellIn + ", " + app.Items[j].Quality);
+                    Console.WriteLine(items.Name + ", " + items.SellIn + ", " + items.Quality);
                 }
                 Console.WriteLine("");
                 app.UpdateQuality();
             }
+            
 
         }
 
-        public void UpdateQuality()
+        public virtual void UpdateQuality()
         {
-            for (var i = 0; i < Items.Count; i++)
-            {
-                if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    if (Items[i].Quality > 0)
-                    {
-                        if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                        {
-                            Items[i].Quality = Items[i].Quality - 1;
-                        }
-                    }
-                }
-                else
-                {
-                    if (Items[i].Quality < 50)
-                    {
-                        Items[i].Quality = Items[i].Quality + 1;
 
-                        if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
-                        {
-                            if (Items[i].SellIn < 11)
-                            {
-                                if (Items[i].Quality < 50)
-                                {
-                                    Items[i].Quality = Items[i].Quality + 1;
-                                }
-                            }
+            foreach(Item item in Items){
+                 if(item.Quality < 0){
+                    item.Quality = 0;
+             } 
+        bool isSulfuras=item.Name==("Sulfuras, Hand of Ragnaros");
+                bool isAgedBrie=item.Name=="Aged Brie";
+             if(isAgedBrie==true){
+                item.Quality=item.Quality+1;
+            if (item.SellIn <= 0) item.Quality++;
+             }
+             bool isBackstage=item.Name=="Backstage passes to a TAFKAL80ETC concert";
+             if(isBackstage==true){
+                item.Quality=item.Quality+1;
+                if(item.SellIn<=10)item.Quality++;
+                if(item.SellIn<=5)item.Quality++;
+                if(item.SellIn<=0)item.Quality=0;
+             }
 
-                            if (Items[i].SellIn < 6)
-                            {
-                                if (Items[i].Quality < 50)
-                                {
-                                    Items[i].Quality = Items[i].Quality + 1;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                {
-                    Items[i].SellIn = Items[i].SellIn - 1;
-                }
-
-                if (Items[i].SellIn < 0)
-                {
-                    if (Items[i].Name != "Aged Brie")
-                    {
-                        if (Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
-                        {
-                            if (Items[i].Quality > 0)
-                            {
-                                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                                {
-                                    Items[i].Quality = Items[i].Quality - 1;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Items[i].Quality = Items[i].Quality - Items[i].Quality;
-                        }
-                    }
-                    else
-                    {
-                        if (Items[i].Quality < 50)
-                        {
-                            Items[i].Quality = Items[i].Quality + 1;
-                        }
-                    }
-                }
+            bool conjured=item.Name!.Contains("Conjured", StringComparison.OrdinalIgnoreCase);
+            if(conjured==true){
+                item.Quality -= 2;
+            if (item.SellIn <= 0){ item.Quality -= 2;}
             }
-        }
+             bool isNormalItem=!isAgedBrie && !isBackstage && !isSulfuras;
+            if(isNormalItem==true){
+                 if(item.Quality>0)item.Quality --;
+                 if(item.SellIn>0)item.SellIn --;
+                if (item.SellIn <= 0) item.Quality = item.Quality - 1;
+                if(item.Quality<0)item.Quality=0;
+                } 
+            if(isSulfuras==true){
+                if(item.Quality!=80){
+                    item.Quality=80;
+                }
 
-    }
 
-    public class Item
-    {
-        public string Name { get; set; }
-
-        public int SellIn { get; set; }
-
-        public int Quality { get; set; }
-    }
+            }else if(item.Quality>50){
+                item.Quality=50;
+            }
+            }
+            }
+          
+ 
+  
 
 }
+    }
